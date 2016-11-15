@@ -51,3 +51,23 @@ LOCAL_MODULE := libcap
 include $(BUILD_STATIC_LIBRARY)
 
 libcap_src_files :=
+
+########################################
+# getcap
+include $(CLEAR_VARS)
+LOCAL_CLANG := true
+LOCAL_CFLAGS := $(common_cflags)
+LOCAL_SRC_FILES := progs/getcap.c
+LOCAL_MODULE := getcap
+LOCAL_STATIC_LIBRARIES := libcap
+include $(BUILD_EXECUTABLE)
+
+########################################
+# setcap
+include $(CLEAR_VARS)
+LOCAL_CLANG := true
+LOCAL_CFLAGS := $(common_cflags)
+LOCAL_SRC_FILES := progs/setcap.c
+LOCAL_MODULE := setcap
+LOCAL_STATIC_LIBRARIES := libcap
+include $(BUILD_EXECUTABLE)
